@@ -1,0 +1,34 @@
+diff -uN conf/local.conf conf_modify//local.conf
+--- conf/local.conf	2012-11-06 22:47:23.662493702 +0100
++++ conf_modify//local.conf	2012-11-06 22:49:55.298500616 +0100
+@@ -17,12 +17,12 @@
+ # These two options control how much parallelism BitBake should use. The first 
+ # option determines how many tasks bitbake should run in parallel:
+ #
+-#BB_NUMBER_THREADS = "4"
++BB_NUMBER_THREADS = "8"
+ # 
+ # The second option controls how many processes make should run in parallel when
+ # running compile tasks:
+ #
+-#PARALLEL_MAKE = "-j 4"
++PARALLEL_MAKE = "-j 8"
+ #
+ # For a quad-core machine, BB_NUMBER_THREADS = "4", PARALLEL_MAKE = "-j 4" would
+ # be appropriate for example.
+@@ -33,7 +33,7 @@
+ # You need to select a specific machine to target the build with. There are a selection
+ # of emulated machines available which can boot and run in the QEMU emulator:
+ #
+-#MACHINE ?= "qemuarm"
++MACHINE ?= "qemuarm"
+ #MACHINE ?= "qemumips"
+ #MACHINE ?= "qemuppc"
+ #MACHINE ?= "qemux86"
+@@ -227,3 +227,6 @@
+ # track the version of this file when it was generated. This can safely be ignored if
+ # this doesn't mean anything to you.
+ CONF_VERSION = "1"
++
++IMAGE_INSTALL_append = " webkit-gtk"
++IMAGE_INSTALL_append = " web-webkit"
