@@ -1,6 +1,6 @@
 DESCRIPTION = "Webkit-Gtk 2 browser"
 LICENSE = "BSD"
-#LIC_FILES_CHKSUM = "file://LICENSE;md5=0750f191c9bbf46869b70508e7eb455b"
+LIC_FILES_CHKSUM = "file://Source/WebKit/LICENSE;md5=4646f90082c40bcf298c285f8bab0b12"
 
 PR = "r1"
 
@@ -55,7 +55,9 @@ DEPENDS = "\
            gperf \
            libtool \
            \
-           python\
+           python \
+           \
+           gail \
 "
 
 #SRC_URI = "http://commondatastorage.googleapis.com/chromium-browser-official/${P}.tar.bz2 \
@@ -79,7 +81,7 @@ S = "${WORKDIR}/git"
 
 do_configure() {
 	#./Tools/Scripts/update-webkitgtk-libs
-	#./Tools/Scripts/build-webkit --gtk --host arm
+	#./Tools/Scripts/build-webkit --gtk --host=${TARGET_SYS}
         #./autogen.sh
         ./configure --host arm
 }
