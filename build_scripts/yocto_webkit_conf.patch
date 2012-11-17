@@ -1,0 +1,10 @@
+diff -uN conf/local.conf conf_modify//local.conf
+--- conf/local.conf	2012-11-09 17:49:57.673594417 +0100
++++ conf_modify//local.conf	2012-11-09 17:51:42.137599165 +0100
+@@ -227,3 +227,6 @@
+ # track the version of this file when it was generated. This can safely be ignored if
+ # this doesn't mean anything to you.
+ CONF_VERSION = "1"
++
++IMAGE_INSTALL_append = " webkit-gtk"
++IMAGE_INSTALL_append = " web-webkit"

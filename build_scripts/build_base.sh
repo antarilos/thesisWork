@@ -8,11 +8,10 @@ CURRDIR=`pwd`
 echo "WORKDIR = $WORKDIR"
 echo "CURRDIR = $CURRDIR"
 
-source $WORKDIR/poky-danny-8.0/oe-init-build-env $WORKDIR/build_yocto_webkit
+source $WORKDIR/poky-danny-8.0/oe-init-build-env $WORKDIR/build
 
 echo "Patching the conf/local.conf file..."
 patch -p0 < $CURRDIR/base_conf.patch
-patch -p0 < $CURRDIR/yocto_webkit_conf.patch
 
 echo "Building the core-image-sato image..."
 time bitbake core-image-sato
